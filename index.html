@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tahir Shah | EagleNest Profile</title>
+    <title>Tahir Shah | AI Engineer & CEO</title>
     <link rel="icon" type="image/png" href="logo.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -18,14 +16,9 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#0f172a',
-                        light: '#f8fafc',
-                        brand: {
-                            orange: '#FF6B35',
-                            red: '#E63946',
-                            purple: '#6D28D9',
-                            meezan: '#870e10'
-                        }
+                        darkMain: '#0B0E14',
+                        cardBg: '#151921',
+                        borderClr: '#232933',
                     }
                 }
             }
@@ -33,182 +26,186 @@
     </script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
-        .brand-text { 
-            background: linear-gradient(135deg, #FF6B35 0%, #E63946 50%, #6D28D9 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .accordion-content {
-            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        .accordion-content.open {
-            max-height: 1000px;
-            opacity: 1;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B0E14; color: white; }
+        .gradient-brand { background: linear-gradient(135deg, #FF6B35 0%, #E63946 50%, #6D28D9 100%); }
+        .text-gradient { background: linear-gradient(135deg, #FF6B35 0%, #E63946 50%, #6D28D9 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .accordion-content { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); max-height: 0; opacity: 0; overflow: hidden; }
+        .accordion-content.open { max-height: 1000px; opacity: 1; padding-bottom: 2rem; }
         .rotate-180 { transform: rotate(180deg); }
+        
+        .bento-card { background: #151921; border: 1px solid #232933; border-radius: 1.5rem; transition: all 0.3s ease; }
+        .bento-card:hover { border-color: #3B424D; transform: translateY(-4px); }
     </style>
 </head>
-<body class="bg-gray-100 text-slate-800 dark:bg-[#0f172a] dark:text-white min-h-screen">
+<body class="min-h-screen pb-20">
 
-    <button onclick="toggleTheme()" class="fixed top-6 right-6 z-50 bg-white dark:bg-slate-800 p-3 rounded-full shadow-xl border border-gray-200 dark:border-slate-700 hover:scale-110 transition">
-        <i class="fa-solid fa-sun text-yellow-500 text-xl hidden dark:block"></i>
-        <i class="fa-solid fa-moon text-slate-600 text-xl block dark:hidden"></i>
-    </button>
+    <div class="relative w-full h-64 md:h-80 overflow-hidden">
+        <img src="cover.png" class="w-full h-full object-cover" alt="Cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkMain via-transparent to-transparent"></div>
+    </div>
 
-    <div class="w-full min-h-screen flex flex-col">
-        
-        <div class="relative h-64 md:h-[400px] w-full overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-100 dark:from-[#0f172a] via-transparent to-black/40 z-10"></div>
-            <div class="absolute top-6 left-6 z-30 flex items-center gap-3">
-                <img src="logo.png" alt="EagleNest Logo" class="h-12 w-auto drop-shadow-lg">
-                <span class="text-white font-bold text-xl hidden md:block drop-shadow-md">EagleNest Creations</span>
-            </div>
-            <img src="cover.png" class="w-full h-full object-cover dark:opacity-80" alt="Cover">
-        </div>
-
-        <div class="w-full px-6 md:px-12 relative z-20 -mt-20 md:-mt-28">
-            <div class="flex flex-col md:flex-row items-center md:items-end gap-6">
-                <div class="w-40 h-40 md:w-56 md:h-56 rounded-full p-1 bg-gray-100 dark:bg-[#0f172a] shadow-2xl">
-                    <img src="profile.png" alt="Tahir Shah" class="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 relative -mt-24">
+        <div class="flex flex-col md:flex-row items-center md:items-end gap-6">
+            <div class="relative">
+                <div class="w-44 h-44 md:w-52 md:h-52 rounded-[2rem] p-1 gradient-brand shadow-2xl">
+                    <img src="profile.png" class="w-full h-full rounded-[1.8rem] object-cover border-4 border-darkMain" alt="Tahir Shah">
                 </div>
-                <div class="text-center md:text-left flex-1 pb-4">
-                    <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white">
-                        Tahir Shah <i class="fa-solid fa-circle-check text-blue-500 text-2xl md:text-4xl align-middle ml-2"></i>
-                    </h1>
-                    <p class="text-lg md:text-2xl text-slate-500 dark:text-slate-400 mt-2 font-medium">
-                        Founder & CEO @ <span class="brand-text font-bold">EagleNest Creations</span>
-                    </p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
-                        <span class="badge-pill"><i class="fa-solid fa-microchip text-purple-500 mr-2"></i>AI Engineer</span>
-                        <span class="badge-pill"><i class="fa-solid fa-bullhorn text-orange-500 mr-2"></i>Marketing</span>
-                        <span class="badge-pill"><i class="fa-solid fa-location-dot text-red-500 mr-2"></i>Swat, PK</span>
+                <div class="absolute -bottom-2 -right-2 bg-blue-500 w-10 h-10 rounded-full border-4 border-darkMain flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-check text-white text-sm"></i>
+                </div>
+            </div>
+
+            <div class="flex-1 text-center md:text-left mb-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Tahir Shah</h1>
+                <p class="text-xl md:text-2xl font-medium text-gray-400 mt-2 italic">Founder & CEO @ <span class="text-gradient font-bold">EagleNest Creations</span></p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
+                    <span class="px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-bold uppercase tracking-wider text-gray-300">AI Engineer</span>
+                    <span class="px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-bold uppercase tracking-wider text-gray-300">Full Stack Dev</span>
+                </div>
+            </div>
+
+            <button onclick="window.location.href='contact.vcf'" class="gradient-brand px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:scale-105 transition-all mb-4 active:scale-95">
+                <i class="fa-solid fa-user-plus mr-2"></i> Save Contact
+            </button>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="md:col-span-2 bento-card overflow-hidden">
+            <button onclick="toggleAccordion('about-me')" class="w-full flex items-center justify-between p-8 text-left group">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500">
+                        <i class="fa-solid fa-id-card text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">About Me</h2>
+                </div>
+                <i id="icon-about-me" class="fa-solid fa-chevron-down text-gray-600 transition-transform duration-300"></i>
+            </button>
+            <div id="about-me" class="accordion-content px-8">
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="p-4 bg-zinc-900/50 rounded-2xl border border-zinc-800/50">
+                        <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Born</p>
+                        <p class="font-semibold text-gray-200 mt-1">June 5, 2006</p>
+                    </div>
+                    <div class="p-4 bg-zinc-900/50 rounded-2xl border border-zinc-800/50">
+                        <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Location</p>
+                        <p class="font-semibold text-gray-200 mt-1 text-sm">Swat, Pakistan</p>
                     </div>
                 </div>
-                <div class="flex gap-4 pb-6 md:pb-8 w-full md:w-auto justify-center">
-                    <button onclick="window.location.href='contact.vcf'" class="bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-orange-500/20 active:scale-95 transition transform">
-                        <i class="fa-solid fa-address-book mr-2"></i> Save Contact
+                <p class="text-gray-400 leading-relaxed text-lg">AI Engineer pursuing BS AI at UEAS Swat. Expertise in Full Stack App Development, Digital Marketing, and Video Production.</p>
+            </div>
+        </div>
+
+        <div class="md:col-span-2 bento-card overflow-hidden">
+            <button onclick="toggleAccordion('about-company')" class="w-full flex items-center justify-between p-8 text-left group">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500">
+                        <i class="fa-solid fa-rocket text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">EagleNest Creations</h2>
+                </div>
+                <i id="icon-about-company" class="fa-solid fa-chevron-down text-gray-600 transition-transform duration-300"></i>
+            </button>
+            <div id="about-company" class="accordion-content px-8">
+                <p class="text-xs text-orange-500 font-bold uppercase tracking-widest mb-2">Since August 1, 2023</p>
+                <p class="text-gray-400 leading-relaxed text-lg italic">Swat's premier digital transformation hub specializing in AI, Software, and Digital Branding. Successfully scaled brands like Jalil International Hospital & Blacky.</p>
+            </div>
+        </div>
+
+        <a href="https://drive.google.com/drive/folders/1pAQ22vT1uQly0Ut0asVZy2LOpcYEiC7i?usp=drive_link" target="_blank" class="bento-card p-8 flex flex-col justify-between group">
+            <i class="fa-brands fa-google-drive text-4xl text-blue-400"></i>
+            <div>
+                <h3 class="text-xl font-bold mt-4">Portfolio</h3>
+                <p class="text-sm text-gray-500 mt-1">Recent Work</p>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/tahir-shah-9b46b72a4" target="_blank" class="bento-card p-8 flex flex-col justify-between group">
+            <i class="fa-brands fa-linkedin-in text-4xl text-blue-600"></i>
+            <div>
+                <h3 class="text-xl font-bold mt-4">LinkedIn</h3>
+                <p class="text-sm text-gray-500 mt-1">Networking</p>
+            </div>
+        </a>
+
+        <a href="https://tiktok.com/@heytahirshah" target="_blank" class="bento-card p-8 flex flex-col justify-between group">
+            <i class="fa-brands fa-tiktok text-4xl text-white"></i>
+            <div>
+                <h3 class="text-xl font-bold mt-4">TikTok</h3>
+                <p class="text-sm text-gray-500 mt-1">@heytahirshah</p>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/heytahirshah/" target="_blank" class="bento-card p-8 flex flex-col justify-between group text-pink-500">
+            <i class="fa-brands fa-instagram text-4xl"></i>
+            <div>
+                <h3 class="text-xl font-bold mt-4 text-white">Instagram</h3>
+                <p class="text-sm text-gray-500 mt-1 text-pink-500">Connect</p>
+            </div>
+        </a>
+
+        <a href="https://wa.me/923464451505" target="_blank" class="bento-card p-8 flex flex-col justify-between group">
+            <i class="fa-brands fa-whatsapp text-4xl text-green-500"></i>
+            <div>
+                <h3 class="text-xl font-bold mt-4">WhatsApp</h3>
+                <p class="text-sm text-gray-500 mt-1">Direct Chat</p>
+            </div>
+        </a>
+
+        <a href="https://snapchat.com/t/igj2eYPH" target="_blank" class="bento-card p-8 flex flex-col justify-between group">
+            <i class="fa-brands fa-snapchat text-4xl text-yellow-400"></i>
+            <div>
+                <h3 class="text-xl font-bold mt-4">Snapchat</h3>
+                <p class="text-sm text-gray-500 mt-1">Add Me</p>
+            </div>
+        </a>
+
+        <div class="md:col-span-2 bento-card p-8 bg-zinc-950/40 relative border-zinc-800">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="flex items-center gap-6">
+                    <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner">
+                        <img src="https://logowik.com/content/uploads/images/meezan-bank6632.logowik.com.webp" class="w-full object-contain" alt="Meezan Bank">
+                    </div>
+                    <div>
+                        <p class="text-xs font-black text-red-700 tracking-[0.3em] uppercase">Meezan Bank</p>
+                        <h3 class="text-xl font-bold text-white uppercase mt-1">Tahir Shah</h3>
+                        <p class="text-sm text-gray-500 font-medium">Matta Swat Branch</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                <div class="bg-darkMain p-4 rounded-2xl border border-zinc-800 flex justify-between items-center group">
+                    <div>
+                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Account Number</p>
+                        <p class="text-lg font-mono font-bold text-gray-200 mt-1">98840111603318</p>
+                    </div>
+                    <button onclick="copy('98840111603318')" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-all">
+                        <i class="fa-solid fa-copy"></i>
+                    </button>
+                </div>
+                <div class="bg-darkMain p-4 rounded-2xl border border-zinc-800 flex justify-between items-center group">
+                    <div>
+                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">IBAN Number</p>
+                        <p class="text-xs font-mono font-bold text-gray-200 mt-1 uppercase">PK79MEZN0098840111603318</p>
+                    </div>
+                    <button onclick="copy('PK79MEZN0098840111603318')" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-all">
+                        <i class="fa-solid fa-copy"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto w-full px-6 mt-12 space-y-4">
-            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm">
-                <button onclick="toggleAccordion('about-me')" class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-slate-700/50 transition">
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400"><i class="fa-solid fa-user"></i></div>
-                        <h3 class="text-xl font-bold text-slate-800 dark:text-white">About Me</h3>
-                    </div>
-                    <i id="icon-about-me" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
-                </button>
-                <div id="about-me" class="accordion-content bg-gray-50 dark:bg-[#0b1120] px-6">
-                    <div class="py-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                            <div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-gray-100 dark:border-slate-700">
-                                <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600 dark:text-purple-400"><i class="fa-solid fa-cake-candles"></i></div>
-                                <div><p class="text-xs text-slate-400 uppercase font-bold tracking-wider">DOB</p><p class="font-semibold text-slate-800 dark:text-white">June 5, 2006</p></div>
-                            </div>
-                            <div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-gray-100 dark:border-slate-700">
-                                <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/40 flex items-center justify-center text-red-600 dark:text-red-400"><i class="fa-solid fa-location-dot"></i></div>
-                                <div><p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Location</p><p class="font-semibold text-slate-800 dark:text-white">Swat, KP, Pakistan</p></div>
-                            </div>
-                        </div>
-                        <div class="text-slate-600 dark:text-slate-300 space-y-4 pt-6 border-t border-gray-200 dark:border-slate-800">
-                            <p>I am a tech visionary currently pursuing a <strong>BS in Artificial Intelligence</strong> at UEAS Swat. Expert in Full Stack App Development and Digital Marketing.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-1 w-full px-4 md:px-12 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1600px] mx-auto">
-                
-                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm col-span-1 md:col-span-2 lg:col-span-1">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-brand-meezan">
-                            <i class="fa-solid fa-building-columns text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-800 dark:text-white">Meezan Bank Ltd</h3>
-                            <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Matta Swat Branch</p>
-                        </div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 dark:bg-[#0b1120] p-3 rounded-lg border border-gray-100 dark:border-slate-700">
-                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-1">Account Title</p>
-                            <p class="text-sm font-bold text-slate-700 dark:text-gray-200">TAHIR SHAH</p>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-[#0b1120] p-3 rounded-lg border border-gray-100 dark:border-slate-700">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <p class="text-[10px] text-gray-400 uppercase font-bold mb-1">Account Number</p>
-                                    <p id="acc-num" class="text-sm font-mono font-bold text-slate-700 dark:text-gray-200">98840111603318</p>
-                                </div>
-                                <button onclick="copyText('98840111603318')" class="p-2 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md transition"><i class="fa-solid fa-copy"></i></button>
-                            </div>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-[#0b1120] p-3 rounded-lg border border-gray-100 dark:border-slate-700">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <p class="text-[10px] text-gray-400 uppercase font-bold mb-1">IBAN</p>
-                                    <p id="iban-num" class="text-xs font-mono font-bold text-slate-700 dark:text-gray-200">PK79MEZN0098840111603318</p>
-                                </div>
-                                <button onclick="copyText('PK79MEZN0098840111603318')" class="p-2 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md transition"><i class="fa-solid fa-copy"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="https://drive.google.com/drive/folders/1pAQ22vT1uQly0Ut0asVZy2LOpcYEiC7i?usp=drive_link" target="_blank" class="link-card group">
-                    <div class="flex items-center justify-between"><div class="flex items-center gap-4"><div class="icon-box bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"><i class="fa-brands fa-google-drive"></i></div><div><h3 class="card-title">Portfolio</h3><p class="card-subtitle">View my work</p></div></div><i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover:text-blue-500 transition"></i></div>
-                </a>
-                <a href="https://www.linkedin.com/in/tahir-shah-9b46b72a4" target="_blank" class="link-card group">
-                    <div class="flex items-center justify-between"><div class="flex items-center gap-4"><div class="icon-box bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-500"><i class="fa-brands fa-linkedin-in"></i></div><div><h3 class="card-title">LinkedIn</h3><p class="card-subtitle">Connect professionally</p></div></div><i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-blue-500 transition"></i></div>
-                </a>
-                <a href="https://tiktok.com/@heytahirshah" target="_blank" class="link-card group">
-                    <div class="flex items-center justify-between"><div class="flex items-center gap-4"><div class="icon-box bg-gray-100 dark:bg-gray-800 text-black dark:text-white border dark:border-gray-600"><i class="fa-brands fa-tiktok"></i></div><div><h3 class="card-title">TikTok</h3><p class="card-subtitle">@heytahirshah</p></div></div><i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-white transition"></i></div>
-                </a>
-                <a href="https://www.instagram.com/heytahirshah/" target="_blank" class="link-card group">
-                    <div class="flex items-center justify-between"><div class="flex items-center gap-4"><div class="icon-box bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400"><i class="fa-brands fa-instagram"></i></div><div><h3 class="card-title">Instagram</h3><p class="card-subtitle">@heytahirshah</p></div></div><i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-pink-500 transition"></i></div>
-                </a>
-                <a href="https://wa.me/923464451505" target="_blank" class="link-card group">
-                    <div class="flex items-center justify-between"><div class="flex items-center gap-4"><div class="icon-box bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"><i class="fa-brands fa-whatsapp"></i></div><div><h3 class="card-title">WhatsApp</h3><p class="card-subtitle">Chat now</p></div></div><i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-green-500 transition"></i></div>
-                </a>
-                <a href="https://snapchat.com/t/igj2eYPH" target="_blank" class="link-card group">
-                    <div class="flex items-center justify-between"><div class="flex items-center gap-4"><div class="icon-box bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400"><i class="fa-brands fa-snapchat"></i></div><div><h3 class="card-title">Snapchat</h3><p class="card-subtitle">Add me</p></div></div><i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-yellow-500 transition"></i></div>
-                </a>
-
-            </div>
-            <div class="text-center mt-16 opacity-60 pb-8">
-                <img src="logo.png" class="h-10 mx-auto grayscale hover:grayscale-0 transition duration-300 mb-4" alt="Logo">
-                <p class="text-sm text-slate-500 dark:text-slate-400 tracking-widest uppercase font-semibold">© 2026 EagleNest Creations</p>
-            </div>
-        </div>
     </div>
 
-    <style type="text/tailwindcss">
-        @layer components {
-            .badge-pill { @apply px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-semibold shadow-sm text-slate-700 dark:text-slate-200; }
-            .link-card { @apply relative overflow-hidden bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-slate-700 transition-all duration-300 cursor-pointer; }
-            .icon-box { @apply w-14 h-14 rounded-2xl flex items-center justify-center text-3xl; }
-            .card-title { @apply text-xl font-bold text-slate-800 dark:text-white; }
-            .card-subtitle { @apply text-sm text-slate-500 dark:text-slate-400 mt-1; }
-        }
-    </style>
+    <div class="text-center mt-20 opacity-30">
+        <img src="logo.png" class="h-10 mx-auto grayscale" alt="Logo">
+        <p class="text-xs font-bold uppercase tracking-widest mt-4">© 2026 EagleNest Creations</p>
+    </div>
 
     <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            html.classList.toggle('dark');
-            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-        }
-        if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
-
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById('icon-' + id);
@@ -216,14 +213,16 @@
             icon.classList.toggle('rotate-180');
         }
 
-        async function copyText(text) {
-            try {
-                await navigator.clipboard.writeText(text);
-                alert("Copied: " + text);
-            } catch (err) {
-                console.error('Failed to copy: ', err);
-            }
+        async function copy(text) {
+            await navigator.clipboard.writeText(text);
+            const notify = document.createElement('div');
+            notify.className = 'fixed bottom-10 left-1/2 -translate-x-1/2 gradient-brand px-6 py-3 rounded-full font-bold shadow-2xl z-50 text-white';
+            notify.innerText = 'Copied to clipboard!';
+            document.body.appendChild(notify);
+            setTimeout(() => notify.remove(), 2000);
         }
+
+        if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
     </script>
 </body>
 </html>
